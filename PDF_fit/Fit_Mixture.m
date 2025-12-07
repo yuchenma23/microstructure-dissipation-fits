@@ -58,7 +58,7 @@ logX        = log10(X);
 
 %=======Step2: Lognormal Mixture Fit======
 
-opt = statset('MaxIter',5e3,'Display','off');
+opt = statset('MaxIter',5e3,'TolFun',1e-10,'Display','final');
 gm  = fitgmdist(logX,K,'RegularizationValue',1e-6,...
                'Replicates',10,'Options',opt);
 
